@@ -75,25 +75,5 @@ function deleteNote(i){data.messages.splice(i,1);if(saveData())renderMessages();
 function clearLocalData(){if(!confirm('Clear KHSC data saved in this browser on this device? This cannot be undone.'))return;localStorage.removeItem(KEY);data={profile:{name:'Learner',school:'',bio:''},posts:[],stories:[],messages:[],reports:[],blocked:[]};renderProfile();renderFeed();renderStories();renderMessages();alert('This device’s KHSC data has been cleared.');}
 fillSelects();loadData();renderProfile();renderStories();renderFeed();renderSchools();renderMessages();setFilter('all');
 </script>
-  <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBDVP8yZB71jkyr9XCFcOmRzHuiKh7NNRM",
-  authDomain: "kenya-high-school-connect.firebaseapp.com",
-  projectId: "kenya-high-school-connect",
-  storageBucket: "kenya-high-school-connect.firebasestorage.app",
-  messagingSenderId: "236168408647",
-  appId: "1:236168408647:web:8b9ef31de6934d26e9cb62"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-console.log("KHSC Firebase connected!");
-  </script>
 </body>
   </html>
